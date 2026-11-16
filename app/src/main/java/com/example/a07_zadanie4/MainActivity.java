@@ -1,6 +1,7 @@
 package com.example.a07_zadanie4;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +21,19 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        View inputWaga = findViewById(R.id.TextWaga);
+        View inputWzrost = findViewById(R.id.TextWzrost);
+        View radioM = findViewById(R.id.radioM);
+        View radioK = findViewById(R.id.radioK);
+        View btnSubmit = findViewById(R.id.button);
+        View textWynik = findViewById(R.id.textWynik);
+
+        btnSubmit.setOnClickListener(v -> {
+
+        });
+
     }
+
+
 }
