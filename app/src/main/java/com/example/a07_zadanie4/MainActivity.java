@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         textWynik = findViewById(R.id.textWynik);
 
         btnSubmit.setOnClickListener(v -> {
-
+            if(waliduj()){
+                liczBMI();
+            }
         });
 
     }
@@ -49,10 +51,36 @@ public class MainActivity extends AppCompatActivity {
         String waga = String.valueOf(inputWaga.getText());
         String wzrost = String.valueOf(inputWzrost.getText());
         if (waga.isEmpty()){
-            textWynik.setText("Pole waga jest pusta");
+            textWynik.setText("Pole waga jest puste");
+            return false;
+        }
+        if (wzrost.isEmpty()){
+            textWynik.setText("Pole wzrost jest puste");
+            return false;
+        }
+        if (Integer.parseInt(waga) < 1){
+            textWynik.setText("Waga musi być większa od 0");
+            return false;
+        }
+        if (Integer.parseInt(wzrost) < 1){
+            textWynik.setText("Wzrost musi być większy od 0");
+            return false;
+        }
+        if (Integer.parseInt(wzrost) > 300){
+            textWynik.setText("Wzrost musi być mniejszy od 300");
+        }
+        if (radioGroup.getCheckedRadioButtonId() == -1) {
+            textWynik.setText("Nie zaznaczono płci");
             return false;
         }
         return true;
+    }
+
+    private void liczBMI(){
+        double waga = Double.parseDouble(String.valueOf(inputWaga.getText()));
+        double wzrost = Double.parseDouble(String.valueOf(inputWzrost.getText())) / 100;
+        double BMI = waga / (wzrost * wzrost);
+        textWynik.setText("BMI: " + BMI);
     }
 
 }
