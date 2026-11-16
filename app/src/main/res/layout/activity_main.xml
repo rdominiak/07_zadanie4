@@ -15,6 +15,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextWaga" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Płeć"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextWzrost" />
+
     <EditText
         android:id="@+id/TextWaga"
         android:layout_width="0dp"
@@ -34,7 +42,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/TextWzrost"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -42,4 +50,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" >
+
+        <RadioButton
+            android:id="@+id/radioM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mężczyzna" />
+
+        <RadioButton
+            android:id="@+id/radioK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kobieta" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
